@@ -10,7 +10,7 @@ import PhotoContainer from "./components/PhotoContainer.js";
 // const Background = styled.div`
 //   height: 100vh;
 //   width: 100vw;
-//   background-image: url({res.data.url});
+//   background-image: url(https://images.unsplash.com/photo-1506404523803-9f9fa45e066e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=1350&q=80);
 //   background-repeat: no-repeat;
 // `;
 
@@ -24,12 +24,18 @@ const App = () => {
           .then(res => {
               console.log(res.data)
               setDaily(res.data);
+              const grab = document.querySelector('.App');
+              console.log(grab);
+              const backgroundImg = res.data.url;
+              grab.style.backgroundImage = 'url("'+backgroundImg+'")';
+              
           })
           .catch(err => {
               console.log(`There was an error`, err)
           });
   }, []);
 
+  
   
 
   return (

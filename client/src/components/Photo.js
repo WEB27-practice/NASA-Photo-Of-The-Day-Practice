@@ -18,7 +18,6 @@ const Explanation = styled.p`
     padding: 2rem;
     color: #fff;
     font-size: 1.5rem;
-   
     font-weight: bold;
 `;
 

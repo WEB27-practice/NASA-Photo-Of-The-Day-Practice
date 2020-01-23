@@ -52,7 +52,8 @@ const App = () => {
     
     const handleChange = (e) => {
       console.log(e.target.value)
-      return (date < `1995-06-16` ? alert(`There are no pictures past June 16th, 1995. Please refresh the page and try again.`) : setNewDate(e.target.value));
+      return (e.target.value < `1995-06-16` ? alert(`There are no pictures past June 16th, 1995. Please select another date and try again.`) : setNewDate(e.target.value));
+      // setNewDate(e.target.value);
       // console.log(newDate);
     }
     
@@ -81,7 +82,7 @@ const App = () => {
         <Header />
         <DateBox>
           <form onSubmit={handleSubmit}>
-            <input type="date" name="date" onClick={handleChange}/>
+            <input type="date" name="date" onChange={handleChange}/>
             <button>Submit</button>
           </form>
         </DateBox>

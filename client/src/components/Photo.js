@@ -36,13 +36,11 @@ const Photo = (props) => {
         return (!props.data.data.copyright ? '' : test);
     }
     
-    function nothing(){
-        return (props.data.data.date < `1995-06-16` ? `There are no pictures past June 16th, 1995` : '');
-    }
+   
 
     return(
         <PhotoBox>
-            <Explanation>{props.data.data.explanation} {nothing()}</Explanation>
+            <Explanation>{props.data.data.explanation}</Explanation>
             <Copyright >{ifElse()}</Copyright>
         </PhotoBox>
     )

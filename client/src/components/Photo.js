@@ -30,10 +30,20 @@ const Copyright = styled.h2`
 const Photo = (props) => {
     console.log(props);
 
+    function ifElse() {
+        const test = ` Credit: ${props.data.data.copyright}`;
+
+        return (!props.data.data.copyright ? '' : test);
+    }
+    
+    function nothing(){
+        return (props.data.data.date < `1995-06-16` ? `There are no pictures past June 16th, 1995` : '');
+    }
+
     return(
         <PhotoBox>
-            <Explanation>{props.data.data.explanation}</Explanation>
-            <Copyright>{props.data.data.copyright}</Copyright>
+            <Explanation>{props.data.data.explanation} {nothing()}</Explanation>
+            <Copyright >{ifElse()}</Copyright>
         </PhotoBox>
     )
 };
